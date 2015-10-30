@@ -1,0 +1,6 @@
+#!/bin/sh
+for file in ../graph/*
+do
+ awk -v OFS='\t' '$1==20 {$2="0.0000000000"}1' $file > temp.file
+ mv temp.file $file
+done
